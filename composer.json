@@ -1,16 +1,22 @@
 {
-    "name": "vozovoz",
+    "name": "yiisoft/yii2-app-basic",
     "description": "Test task for vozovoz company",
     "type": "project",
     "support": {
-        "source": "https://github.com/IvanKarezin/vozovoz"
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "https://www.yiiframework.com/forum/",
+        "wiki": "https://www.yiiframework.com/wiki/",
+        "irc": "ircs://irc.libera.chat:6697/yii",
+        "source": "https://github.com/yiisoft/yii2"
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.4.0",
+        "php": ">=8.0",
         "yiisoft/yii2": "~2.0.45",
         "yiisoft/yii2-bootstrap5": "~2.0.2",
-        "yiisoft/yii2-symfonymailer": "~2.0.3"
+        "yiisoft/yii2-symfonymailer": "~2.0.3",
+        "spatie/data-transfer-object": "^3.9",
+        "yiisoft/yii2-httpclient": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -56,6 +62,11 @@
             "generateCookieValidationKey": [
                 "config/web.php"
             ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "common\\": "common"
         }
     },
     "repositories": [

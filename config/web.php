@@ -50,8 +50,8 @@ $config = [
         ],
     ],
     'modules' => [
-        'api' => [
-            'class' => 'app\modules\api\Module'
+        'v1' => [
+            'class' => 'app\modules\v1\Module'
         ]
     ],
     'params' => $params,

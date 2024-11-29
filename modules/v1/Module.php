@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\api;
+namespace app\modules\v1;
 
 /**
  * api module definition class
@@ -10,7 +10,7 @@ class Module extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
-    public $controllerNamespace = 'app\modules\api\controllers';
+    public $controllerNamespace = 'app\modules\v1\controllers';
 
     /**
      * {@inheritdoc}
@@ -19,6 +19,6 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        // custom initialization code goes here
+        \Yii::configure($this, require __DIR__ . '/config/api.php');
     }
 }
