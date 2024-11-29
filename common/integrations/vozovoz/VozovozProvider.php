@@ -4,6 +4,8 @@ namespace common\integrations\vozovoz;
 
 use common\integrations\vozovoz\DTO\LocationDTO;
 use common\integrations\vozovoz\DTO\LocationResultDTO;
+use common\integrations\vozovoz\DTO\PriceDTOs\PriceDTO;
+use common\integrations\vozovoz\DTO\PriceDTOs\PriceResult\PriceResultDTO;
 
 class VozovozProvider
 {
@@ -36,5 +38,12 @@ class VozovozProvider
         }
 
         return null;
+    }
+
+    public function getPrice(PriceDTO $dto): PriceResultDTO
+    {
+        $response = $this->driver->request($dto)->data;
+
+        return new PriceResultDTO($response['response']);
     }
 }

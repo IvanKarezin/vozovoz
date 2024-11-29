@@ -10,13 +10,15 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                'class' => \yii\rest\UrlRule::class,
+                'only' => ['POST']
             ],
         ],
         'request' => [
             'class' => \yii\web\Request::class,
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
-            ]
+            ],
         ],
         'log' => [
             'class' => \yii\log\Logger::class,
@@ -29,6 +31,17 @@ return [
             ],
         ],
     ],
+    'controllerMap' => [
+        'location' => [
+            'class' => \app\modules\v1\controllers\LocationController::class,
+            'enableCsrfValidation' => false,
+        ],
+        'price' => [
+            'class' => \app\modules\v1\controllers\LocationController::class,
+            'enableCsrfValidation' => false,
+        ]
+    ],
     'params' => [
+
     ]
 ];
