@@ -16,10 +16,10 @@ class VozovozProvider
 
     public function searchLocations(?LocationDTO $location = null): array
     {
-        $response = $this->driver->request($location ?? new LocationDTO())->data;
+        $response = $this->driver->request($location ?? new LocationDTO());
         $res = [];
 
-        foreach ($response['response']['data'] as $location) {
+        foreach ($response->data['response']['data'] as $location) {
             $res[] = new LocationResultDTO($location);
         }
 

@@ -9,7 +9,7 @@ class Location extends Model
     public ?string $guid;
     public ?string $name;
     public ?string $country;
-    public ?string $search;
+    public ?string $search = null;
 
     public function rules()
     {

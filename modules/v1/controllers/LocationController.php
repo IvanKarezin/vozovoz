@@ -2,6 +2,8 @@
 
 namespace app\modules\v1\controllers;
 
+use common\models\providers\LocationDataProvider;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Request;
 
@@ -9,24 +11,8 @@ class LocationController extends Controller
 {
     public function actionGet(Request $request)
     {
-        return $this->reqDispatch($request);
+        $provider = new LocationDataProvider($request->post());
+
+        return Json::encode($provider->getModels());
     }
-
-    private function reqDispatch(Request $request)
-    {
-        if($request->post('search'))
-        {
-            return $this->search($request->post('search'));
-        }
-
-        return $this->getDefault();
-    }
-
-    private function search(string $input): array
-    {
-
-    }
-
-    private function getDefault(): array
-    {}
 }

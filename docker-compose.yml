@@ -10,4 +10,4 @@ services:
       PHP_ENABLE_XDEBUG: 1
     env_file: .env
     ports:
-      - '8000:80'
+      - '8001:80'
