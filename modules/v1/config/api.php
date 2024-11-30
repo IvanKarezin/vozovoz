@@ -37,7 +37,7 @@ return [
             'enableCsrfValidation' => false,
         ],
         'price' => [
-            'class' => \app\modules\v1\controllers\LocationController::class,
+            'class' => \app\modules\v1\controllers\PriceController::class,
             'enableCsrfValidation' => false,
         ]
     ],

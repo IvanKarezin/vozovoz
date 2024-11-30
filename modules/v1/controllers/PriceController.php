@@ -12,7 +12,7 @@ class PriceController extends Controller
 {
     private PriceService $service;
 
-    public function __construct($id, $module, $config, PriceService $service)
+    public function __construct($id, $module, PriceService $service, $config)
     {
         $this->service = $service;
 
