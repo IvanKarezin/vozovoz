@@ -3,6 +3,7 @@
 namespace modules\v1\models;
 
 use yii\base\Model;
+use yii\db\Exception;
 
 class PriceForm extends Model
 {
@@ -31,6 +32,20 @@ class PriceForm extends Model
         $price->from = $from;
         $price->to = $to;
 
-        return $price;
+        if($from->validate() && $to->validate() && $price->validate())
+        {
+            return $price;
+        }
+
+        throw new Exception(self::getErrorsToString($from, $to, $price));
+    }
+
+    private static function getErrorsToString(PointForm $from, PointForm $to, PriceForm $price): string
+    {
+        $fromErrors = implode(',', $from->errors);
+        $toErrors = implode(' ', $to->errors);
+        $priceErrors = implode(' ', $price->errors);
+
+        return $fromErrors . ' ' . $toErrors . ' ' . $priceErrors;
     }
 }
