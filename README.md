@@ -31,7 +31,7 @@ POST: http://localhost:8001/v1/price/get
 }
 ```
 
-POST: https://vozovoz.org/api/?token=LewHIJIU2eoDUx2eTWem9PXMygm1kwMAgwMuTXL6
+POST: http://localhost:8001/v1/location/get
 Пример запроса: 
 ```json
 {
